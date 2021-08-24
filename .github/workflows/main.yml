@@ -1,0 +1,15 @@
+name: Devsecops workflow for Revision Day1
+on: [push]
+jobs:
+
+build:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Echo the output of the command
+      run: echo "this is build"
+
+test:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Echo the output of command in test phase
+      run: echo "this is test"
