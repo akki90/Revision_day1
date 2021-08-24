@@ -32,6 +32,9 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: ifconfig Output
+          
+      - name: Download the output file
+        uses: actions/download-artifact@v2
         with:
           name: Windows Ipconfig output
 
