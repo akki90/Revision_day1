@@ -12,7 +12,7 @@ jobs:
           name: ifconfig Output
           path: ifconfig.json
         if: always()
-        
+
       - name: Print the output of the command
         run: ipconfig >> ipconfig_windows.txt
       - name: Upload the output file for windows
@@ -31,7 +31,8 @@ jobs:
       - name: Download the output file
         uses: actions/download-artifact@v2
         with:
-          name: [ifconfig Output,Windows Ipconfig output]
+          name: ifconfig Output
+          name: Windows Ipconfig output
 
 
         
