@@ -2,7 +2,7 @@ name: Devsecops workflow for Revision Day1
 on: [push]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest,windows-latest]
     steps:
       - name: Print the output of the command
         run: ifconfig >> ifconfig.json
@@ -12,8 +12,7 @@ jobs:
           name: ifconfig Output
           path: ifconfig.json
         if: always()
-    runs-on: windows-latest
-    steps:
+        
       - name: Print the output of the command
         run: ipconfig >> ipconfig_windows.txt
       - name: Upload the output file for windows
