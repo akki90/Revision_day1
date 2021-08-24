@@ -5,12 +5,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo the output of the command
-        run: ifconfig >> ifconfig.txt
+        run: ifconfig >> ifconfig.json
       - name: Uplaod the output file
         uses: actions/upload-artifact@v2
         with:
           name: ifconfig Output
-          path: ifconfig.txt
+          path: ifconfig.json
         if: always()
 
 
