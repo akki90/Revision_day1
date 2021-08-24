@@ -4,14 +4,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo the output of the command
+      - name: Print the output of the command
         run: ifconfig >> ifconfig.json
-      - name: Uplaod the output file
+      - name: Upload the output file
         uses: actions/upload-artifact@v2
         with:
           name: ifconfig Output
           path: ifconfig.json
         if: always()
+    runs-on: windows-latest
+    steps:
+      - name: Print the output of the command
+        run: ipconfig >> ipconfig_windows.txt
+      - name: Upload the output file for windows
+        uses: actions/upload-artifact@v2
+        with:
+          name: Windows Ipconfig output
+          path: ipconfig_windows.txt
 
 
   test:
@@ -23,4 +32,7 @@ jobs:
       - name: Download the output file
         uses: actions/download-artifact@v2
         with:
-          name: ifconfig Output
+          name: ifconfig Output,Windows Ipconfig output
+
+
+        
