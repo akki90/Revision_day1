@@ -5,9 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo the output of the command
-        run: 
-        echo "this is build"
-        ifconfig >> ifconfig.txt
+        run: ifconfig >> ifconfig.txt
       - name: Uplaod the output file
         uses: actions/upload-artifact@v2
         with:
